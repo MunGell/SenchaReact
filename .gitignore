@@ -1,0 +1,4 @@
+build/
+resources/css/*.css
+touch/*
+!touch/version.txt
