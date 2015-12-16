@@ -1,0 +1,27 @@
+{
+  "name": "sencha-react",
+  "version": "1.0.0",
+  "description": "Sencha Touch with React",
+  "main": "app.js",
+  "scripts": {
+    "test": "gulp test",
+    "build-components": "./node_modules/.bin/browserify components/index.js -t babelify --outfile components.js"
+  },
+  "keywords": [
+    "sencha",
+    "react"
+  ],
+  "author": "Shmavon Gazanchyan <sgazanchyan@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "^6.3.13",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "bower": "^1.7.1",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^6.1.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-util": "^3.0.7"
+  }
+}

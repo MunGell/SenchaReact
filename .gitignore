@@ -1,4 +1,8 @@
+node_modules
+packages
+
 build/
 resources/css/*.css
+resources/sass/.sass-cache
 touch/*
 !touch/version.txt
