@@ -1,4 +1,4 @@
-Ext.define('react.view.Main', {
+Ext.define('SenchaReact.view.Main', {
     extend: 'Ext.tab.Panel',
     xtype: 'main',
     requires: [
@@ -46,5 +46,12 @@ Ext.define('react.view.Main', {
                 ]
             }
         ]
+    },
+
+    initialize: function() {
+        var me = this;
+        ReactDOM.render(React.createElement(ReactViewMain, {
+            name: 'Ha'
+        }), me.element.dom);
     }
 });

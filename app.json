@@ -2,7 +2,7 @@
     /**
      * The application's namespace, used by Sencha Command to generate classes
      */
-    "name": "react",
+    "name": "SenchaReact",
 
     /**
      * The file path to this application's front HTML document, relative to this app.json file
@@ -46,6 +46,18 @@
         {
             "path": "bootstrap.js",
             "x-bootstrap": true
+        },
+        {
+            "path": "packages/react/react.js",
+            "bundle": true
+        },
+        {
+            "path": "packages/react/react-dom.js",
+            "bundle": true
+        },
+        {
+            "path": "components.js",
+            "bundle": true
         },
         {
             "path": "app.js",

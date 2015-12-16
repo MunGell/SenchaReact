@@ -11,7 +11,7 @@
 */
 
 Ext.application({
-    name: 'react',
+    name: 'SenchaReact',
 
     requires: [
         'Ext.MessageBox'
@@ -44,7 +44,7 @@ Ext.application({
         Ext.fly('appLoadingIndicator').destroy();
 
         // Initialize the main view
-        Ext.Viewport.add(Ext.create('react.view.Main'));
+        Ext.Viewport.add(Ext.create('SenchaReact.view.Main'));
     },
 
     onUpdated: function() {
