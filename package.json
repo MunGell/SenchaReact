@@ -4,8 +4,8 @@
   "description": "Sencha Touch with React",
   "main": "app.js",
   "scripts": {
-    "test": "gulp test",
-    "build-components": "./node_modules/.bin/browserify components/index.js -t babelify --outfile components.js"
+    "test": "./node_modules/.bin/gulp test",
+    "build": "./node_modules/.bin/gulp build-components"
   },
   "keywords": [
     "sencha",
