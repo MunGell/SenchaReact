@@ -2,7 +2,7 @@
 <html manifest="" lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <title>react</title>
+    <title>Sencha and React Component</title>
     <style type="text/css">
          /**
          * Example of an initial loading indicator.
@@ -21,31 +21,61 @@
             text-align: center;
             width: 100%;
             height: 30px;
-            -webkit-animation-name: appLoadingIndicator;
-            -webkit-animation-duration: 0.5s;
-            -webkit-animation-iteration-count: infinite;
-            -webkit-animation-direction: linear;
+        }
+
+        #appLoadingIndicator > div:nth-child(1) {
+            -webkit-animation-name: appLoadingIndicatorFirst;
+        }
+         #appLoadingIndicator > div:nth-child(2) {
+            -webkit-animation-name: appLoadingIndicatorSecond;
+        }
+         #appLoadingIndicator > div:nth-child(3) {
+            -webkit-animation-name: appLoadingIndicatorThird;
         }
 
         #appLoadingIndicator > * {
             background-color: #FFFFFF;
             display: inline-block;
             height: 30px;
-            -webkit-border-radius: 15px;
             margin: 0 5px;
             width: 30px;
             opacity: 0.8;
+            -webkit-animation-duration: 0.8s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-direction: normal;
         }
 
-        @-webkit-keyframes appLoadingIndicator{
+        @-webkit-keyframes appLoadingIndicatorFirst {
             0% {
-                opacity: 0.8
+                opacity: 0.333
             }
             50% {
-                opacity: 0
+                opacity: 0.666
             }
             100% {
-                opacity: 0.8
+                opacity: 0.999
+            }
+        }
+        @-webkit-keyframes appLoadingIndicatorSecond {
+            0% {
+                opacity: 0.666
+            }
+            50% {
+                opacity: 0.999
+            }
+            100% {
+                opacity: 0.333
+            }
+        }
+        @-webkit-keyframes appLoadingIndicatorThird {
+            0% {
+                opacity: 0.999
+            }
+            50% {
+                opacity: 0.333
+            }
+            100% {
+                opacity: 0.666
             }
         }
     </style>
