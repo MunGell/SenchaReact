@@ -668,6 +668,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.viewport.WindowsPhone": [
     "Ext.viewport.WP"
   ],
+  "SenchaReact.view.Board": [],
   "SenchaReact.view.Main": []
 });
 
@@ -1397,6 +1398,9 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Ios": [],
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": [],
+  "SenchaReact.view.Board": [
+    "widget.react-board"
+  ],
   "SenchaReact.view.Main": [
     "widget.main"
   ]
