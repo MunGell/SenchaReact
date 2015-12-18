@@ -14,3 +14,7 @@ gulp.task('build-components', function () {
         .pipe(concat('components.js'))
         .pipe(gulp.dest('.'))
 });
+
+gulp.task('watch-components', function() {
+    gulp.watch('./components/**/*.js', ['build-components']);
+});
