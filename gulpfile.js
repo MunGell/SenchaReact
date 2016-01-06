@@ -1,20 +1,47 @@
 var gulp = require('gulp');
-var babel = require('gulp-babel');
-var concat = require('gulp-concat');
 var util = require('gulp-util');
+var buffer = require('vinyl-buffer');
+var source = require('vinyl-source-stream');
+var sourcemaps = require('gulp-sourcemaps');
+var browserify = require('browserify');
+var watchify = require('watchify');
+var babelify = require('babelify');
+var uglify = require('gulp-uglify');
 
 var onError = function (error) {
     util.log(error);
     this.emit('end');
 };
 
-gulp.task('build-components', function () {
-    return gulp.src('./components/**/*.js')
-        .pipe(babel())
-        .pipe(concat('components.js'))
-        .pipe(gulp.dest('.'))
-});
+var compile = function (watch) {
+    var bundler = watchify(browserify('./components/index.js', { debug: true }).transform(babelify));
 
-gulp.task('watch-components', function() {
-    gulp.watch('./components/**/*.js', ['build-components']);
-});
+    function rebundle() {
+        bundler.bundle()
+            .on('error', onError)
+            .pipe(source('components.js'))
+            .pipe(buffer())
+            .pipe(uglify()).on('error', onError)
+            .pipe(sourcemaps.init({ loadMaps: true }))
+            .pipe(sourcemaps.write('./'))
+            .pipe(gulp.dest('./'));
+    }
+
+    if (watch) {
+        bundler.on('update', function() {
+            util.log('bundling...');
+            rebundle();
+        });
+    }
+
+    rebundle();
+};
+
+var watch = function () {
+    return compile(true);
+};
+
+gulp.task('build', function() { return compile(); });
+gulp.task('watch', function() { return watch(); });
+
+gulp.task('default', ['watch']);

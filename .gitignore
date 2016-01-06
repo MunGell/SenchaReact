@@ -4,5 +4,6 @@ packages
 build/
 resources/css/*.css
 resources/sass/.sass-cache
+bootstrap.*
 touch/*
 !touch/version.txt

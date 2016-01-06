@@ -48,14 +48,6 @@
             "x-bootstrap": true
         },
         {
-            "path": "packages/react/react.js",
-            "bundle": true
-        },
-        {
-            "path": "packages/react/react-dom.js",
-            "bundle": true
-        },
-        {
             "path": "components.js",
             "bundle": true
         },
